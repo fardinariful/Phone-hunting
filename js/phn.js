@@ -18,7 +18,7 @@ else{
     showallbtn.classList.add('hidden');
 }
 //display only 10 phones
-//.phone=phone.slice(0,4);
+phone=phone.slice(0,12);
 phon.textContent="";
 
 phone.forEach(ph =>{
@@ -35,7 +35,7 @@ phone.forEach(ph =>{
                     <p class="font-bold">Name:"${ph.phone_name}"</p>
                     <p class="text-gray-600">There are many variations of passages of available, but the majority have suffered</p>
                     <p class="font-semibold">$999</p>
-                    <button class="bg-blue-500 text-white rounded py-2 px-4 mt-2 hover:bg-blue-600">Show Details</button>
+                    <button onclick="show_details('${ph.slug}') ; show_phone_details.showModal()" class="bg-blue-500 text-white rounded py-2 px-4 mt-2 hover:bg-blue-600">Show Details</button>
                 </div>
     
     `;
@@ -45,7 +45,15 @@ phone.forEach(ph =>{
 toggleloading(false);
 }
 
+const show_details = async (id) => {
+console.log("click",id);
+const res=await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+const data= await res.json();
+console.log(data);
 
+
+
+}
 const handler = () =>
 {
     toggleloading(true);
