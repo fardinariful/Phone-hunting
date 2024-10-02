@@ -41,18 +41,28 @@ phone.forEach(ph =>{
     `;
     phon.appendChild(phonecard);
 })
+
+toggleloading(false);
 }
 
 
 const handler = () =>
 {
-    toggleloading();
+    toggleloading(true);
     const searchfield=document.getElementById("search-field");
     const searchtext=searchfield.value;
     loadfuntion(searchtext);
 }
 
-const toggleloading = () =>{
+const toggleloading = (isloading) =>{
  const loadingbtn=document.getElementById('loading-spinner');
- loadingbtn.classList.remove('hidden');
+ if(isloading)
+ {
+    loadingbtn.classList.remove('hidden');
 }
+ else{
+    loadingbtn.classList.add('hidden');
+}
+ }
+ 
+ 
