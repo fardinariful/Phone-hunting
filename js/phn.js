@@ -58,22 +58,27 @@ showphonedetails(phone);
 
 const showphonedetails=(phoneno)=>{
     console.log(phoneno);
-    const phone_name=document.getElementById('show-details-phone-name');
-    phone_name.innerText=phoneno.name;
+   
+     const showdetailscontainer=document.getElementById("Show-details_container");
+     showdetailscontainer.innerHTML=`
 
-    // const showdetailscontainer=document.getElementById("Show-details_container");
-    // showdetailscontainer.innerHTML=
-        //  <img src="${phoneno.image}" alt="">
-        //  <h3>Iphone 13 Pro Max</h3>
-        //  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-        //  <p>Storage : 128GB/256GB/1TB Storage, No card slot</p>
-        //  <p>Display Size : 6.7 Inches, 109.8 cm</p>
-        //  <p>Chipset : Apple A15 Bionic</p>
-        //  <p>Memory : 128GB 6 GB RAM, 256GB RAM, 512GB RAM1 1TB 6GB RAM</p>
-        //  <p>Slug : Applice_Iphone_13_Pro_Max</p>
-        //  <p>Release data : Released 2021, September 24</p>
-        //  <p>Brand : Apple</p>
-        //  <p>GPS : AYes, with A-GPS, GLONASS, GALILEO, BDS, QZSS</p>
+      <div class="bg-[#0D6EFD0D] w-full p-4">
+            <img   src="${phoneno.image}" alt=""> 
+        </div>
+         <h3 class="text-[#403F3F] text-3xl font-bold mt-2">"${phoneno.name}"</h3>
+         <p class="text-[#706F6F] mt-2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+         <p class="text-[#706F6F] mt-2"><span class="text-[#403F3F]">Storage :</span> "${phoneno.mainFeatures
+            .storage}"</p>
+         <p class="text-[#706F6F] mt-2"><span class="text-[#403F3F]"> Display Size :</span> "${phoneno.mainFeatures.displaySize}"</p>
+         <p class="text-[#706F6F] mt-2"><span class="text-[#403F3F]">Chipset :</span> "${phoneno.mainFeatures.chipSet}"</p>
+         <p class="text-[#706F6F] mt-2"><span class="text-[#403F3F]">Memory : </span> "${phoneno.mainFeatures.memory}"</p>
+         <p class="text-[#706F6F] mt-2"><span class="text-[#403F3F]">Slug :</span> "${phoneno.slug}"</p>
+         <p class="text-[#706F6F] mt-2"><span class="text-[#403F3F]">Release data :</span>  "${phoneno.releaseDate}"</p>
+         <p class="text-[#706F6F] mt-2"><span class="text-[#403F3F]">Brand : </span> "${phoneno.brand}"</p>
+         <p class="text-[#706F6F] mt-2"><span class="text-[#403F3F]">GPS :</span>  "${phoneno.others.GPS}"</p> 
+     
+     `
+    
 
     
     
